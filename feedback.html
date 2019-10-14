@@ -1,0 +1,209 @@
+<html>
+	<head>
+		<title>Feedback</title>
+		<style>
+			body {
+				margin: 0;
+				font-family:Arial;
+				text-align:center;
+				background-image:url(img/floor-tile.png);
+				background-position:center-center;
+			}
+			
+			.topnav {
+				background-color: #E97451;
+				overflow: hidden;
+				width:100%;
+				top: 0;
+				font-family: Arial Black;
+			}
+				
+			.page a {
+				float: left;
+				color: white;
+				text-align: center;
+				padding: 14px 16px;
+				margin-right: 25px;
+				font-weight: bold;
+				font-size: 17px;
+				text-decoration:none;
+			}
+			
+			.page:hover{
+				background-color: white;
+				color: black;
+				text-decoration: underline;
+			}
+			
+			.dropdown {
+				float: left;
+				overflow: hidden;
+			}
+			
+			.social {
+				float: right;
+				padding: 8px;
+				font-size: 30px;
+				width: 30px;
+				text-align: center;
+				text-decoration: none;
+				margin-right: 5px;
+			}
+			
+			.social:hover {
+				opacity: 0.5;
+				color:white;
+			}
+			
+			.dropdown .dropbtn {
+				text-align: center;
+				padding: 14px 16px;
+				margin-right: 25px;
+				font-weight: bold;
+				font-size: 17px; 
+				border: none;
+				outline: none;
+				color: white;
+				background-color: inherit;
+				font-family: inherit;
+			}
+
+			.topnav a:hover, .dropdown:hover .dropbtn {
+				background-color: white;
+				color: black;
+				text-decoration: underline;
+			}
+
+			.dropdown-content {
+				display: none;
+				position: absolute;
+				background-color: #f9f9f9;
+				min-width: 160px;
+				box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+				z-index: 1;
+				font-size:13px;
+			}
+
+			.dropdown-content a {
+				float: none;
+				color: black;
+				padding: 12px 16px;
+				text-decoration: none;
+				display: block;
+				text-align: left;
+			}
+
+			.dropdown-content a:hover {
+				background-color: #ddd;
+			}
+
+			.dropdown:hover .dropdown-content {
+				display: block;
+			}
+			
+			.button{
+				background-color:white;
+				border-radius: 12px;
+				transition-duration: 0.4s;
+				cursor: pointer;
+				padding: 15px 30px;
+			}
+			
+			.button:hover {
+				background-color: #4CAF50;
+				color: white;
+			
+			}
+			
+			.fieldset{
+				width:30%;
+				background-color:#fca103;
+				float:left;
+				margin-top:5%;
+				margin-left:15%;
+				text-align:center;
+			}
+			
+			.fieldset2{
+				width:30%;
+				background-color:#fca103;
+				float:right;
+				margin-top:5%;
+				margin-right:15%;
+				text-align:center;
+			
+		</style>
+	</head>
+	
+	<body>
+		<div class="topnav">
+			<div class="page">
+				<a href="index.html">Home</a>
+			</div>
+				
+			<div class="dropdown">
+				<button class="dropbtn">About Me</button>
+				<div class="dropdown-content">
+					<a href="personalInfo.html">About Me</a>
+					<a href="favSong.html">Favourite Songs </a>
+				</div>
+			</div>
+			<div class="page">
+				<a href="achievement.html">Achievements</a>
+				<a href="feedback.html">Feedback</a>
+			</div>
+			<a href="https://www.instagram.com/actuallymamal" target="_blank"><img src="img/ig.png" title="Instagram" class="social"/></a>
+			<a href="https://www.twitter.com/actuallymamal" target="_blank"><img src="img/twitter.png" title="Twitter" class="social"/></a>
+			<a href="https://www.facebook.com/khairul.akmal99" target="_blank"><img src="img/fb.jpg" title="Facebook" class="social"/></a>	
+			<a href="https://github.com/khairulakmal16" target="_blank"><img src="img/github.jpg" title="Github" class="social"/></a>	
+		</div>	
+		<div class="fieldset">
+			<form method="POST" action="https://formspree.io/khairulakmal0@gmail.com">
+				<table align="center" style="margin-top:3%; margin-left:3%;">
+					<p style="font-size:35px;"><b>Feedback Form</b></p>
+					<tr>
+						<td><b>Name</b></td>
+						<td><b>:</b></td>
+						<td><input placeholder="Your First Name" type="text" name="name" required></td>
+					</tr>
+					<tr>
+						<td><b>Email Address</b></td>
+						<td><b>:</b></td>
+						<td><input placeholder="Your Email" type="text" name="email" required></td>
+					</tr>
+					<tr>
+						<td><b>Feedback</b></td>
+						<td><b>:</b></td>
+						<td><textarea placeholder="Type Your Feedback Here..." rows="8" cols="40" name="feedback" required></textarea></td>
+					</tr>
+				</table>
+				<button type="submit" name="submit" type="submit" class="button">Submit</button>
+			</form>
+		</div>
+		<div class="fieldset2">
+			<p style="font-size:35px;"><b>Contact Information</b></p>
+			<img src="img/mal.jpg" style="width:200px; height:200px; margin:0; border-radius:50%;"/>
+			<table align="center" style="margin-top:3%; margin-left:3%;">
+				<tr>
+					<td>Email</td>
+					<td>:</td>
+					<td>khairulakmal0@gmail.com</td>
+					
+				</tr>
+				<tr>
+					<td>Phone Number</td>
+					<td>:</td>
+					<td>+60128570713</td>
+					
+				</tr>
+				<tr>
+					<td>Address</td>
+					<td>:</td>
+					<td>Perumahan Kilang Sawit Gedong, 94700 Serian, Sarawak</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
+					
+	
