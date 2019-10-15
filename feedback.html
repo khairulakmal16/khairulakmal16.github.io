@@ -117,30 +117,40 @@
 			
 			}
 			
-			.fieldset{
+			.box{
 				border-width:5px;  
 				border-style:outset;
-				border-color:grey;
-				width:30%;
 				background-color:#E97451;
 				float:left;
+				width:35%;
+				height:65%;
+				padding:5px;
 				margin-top:5%;
 				margin-left:15%;
 				text-align:center;
 				border-radius:10%;
+				border-color:grey;
 			}
 			
-			.fieldset2{
+			input[type=text]{
+				width:100%;
+			}
+			
+			.box2{
+				height:65%;
 				width:30%;
 				background-color:#E97451;
 				border-width:5px;  
 				border-style:outset;
 				border-color:grey;
 				float:right;
+				padding:5px;
 				margin-top:5%;
 				margin-right:15%;
 				text-align:center;
 				border-radius:10%;
+				
+			}
 			
 		</style>
 	</head>
@@ -167,30 +177,31 @@
 			<a href="https://www.facebook.com/khairul.akmal99" target="_blank"><img src="img/fb.jpg" title="Facebook" class="social"/></a>	
 			<a href="https://github.com/khairulakmal16" target="_blank"><img src="img/github.png" title="Github" class="social"/></a>	
 		</div>	
-		<div class="fieldset">
-			<form name="feedback" method="POST" action="https://formspree.io/khairulakmal0@gmail.com">
-				<table align="center" style="margin-top:3%; margin-left:3%;">
+		<div class="box">
+			<form name="feedback" method="POST" action="https://formspree.io/khairulakmal0@gmail.com" onsubmit="return validate()">
+				<table>
 					<p style="font-size:35px;"><b>Feedback Form</b></p>
 					<tr>
 						<td><b>Name</b></td>
 						<td><b>:</b></td>
-						<td><input size="40" placeholder="Your Full Name" type="text" name="Full Name" required></td>
+						<td><input placeholder="Your Full Name" type="text" name="Full Name" size="44" required></td>
 					</tr>
 					<tr>
 						<td><b>Email Address</b></td>
 						<td><b>:</b></td>
-						<td><input size="40" placeholder="Your Email" type="text" name="Email" required></td>
+						<td><input placeholder="Your Email" type="text" name="Email" required></td>
 					</tr>
 					<tr>
 						<td><b>Feedback</b></td>
 						<td><b>:</b></td>
-						<td><textarea placeholder="Type Your Feedback Here..." rows="8" cols="40" name="Feedback" required></textarea></td>
+						<td><textarea placeholder="Type Your Feedback Here..." name="Feedback" rows="10" cols="44" required></textarea></td>
 					</tr>
-				</table>
-					<input type="submit" value="Submit" class="button">
+				</table>				
+				<input type="submit" value="Submit" class="button">
 			</form>
 		</div>
-		<div class="fieldset2">
+		
+		<div class="box2">
 			<p style="font-size:35px;"><b>Contact Information</b></p>
 			<img src="img/mal.jpg" style="width:200px; height:200px; margin:0; border-radius:50%;"/>
 			<table align="center" style="margin-top:3%; margin-left:3%; margin-bottom:3%;">
@@ -213,5 +224,18 @@
 				</tr>
 			</table>
 		</div>
+		<script>
+			function validate(){
+				var email = document.feedback.Email.value;
+				if(email.includes('@')){
+					dialog("You will redirect to Formspree.io");
+					return true;
+				}
+				else {
+					alert("Please Enter The Correct Email");
+					return false;
+				}
+			}
+		</script>
 	</body>
 </html>
