@@ -102,22 +102,40 @@
 		}
 		
 		.fieldset{
-			border:2px solid black;
 			display: block; 
 			margin: 0 auto;
 			text-align:center;
-			background-color:gray;
+			background-color:teal;
 			width:30%;
-			height:50%;
+			height:60%;
 		}
 		
-		.gif{
-			float:right;
+		<!-- .gif{ 
+			float:left;
 			margin-right:3%;
 			margin-bottom:5%;
 			margin-top:5%;
-			background-image:url(img/cat.gif);
+			background-image:url(img/cat.gif);-->
 		}
+		
+		.textbox{
+			border-width:5px;  
+			border-style:outset;
+			width:30%;
+			height:70%;
+			display: block; 
+			margin: 0 auto;
+			border-color:teal;
+			margin-top:3%;
+			border-radius:10%;
+		}
+		
+		.table1{
+			text-align:center;
+			background-color:teal;
+			border-radius:10%;
+		}
+			
 		
 	</style>
 	<head>
@@ -137,7 +155,7 @@
 				</div>
 			</div>
 			<div class="page">
-				<a href="achievement.html">Achievements</a>
+				<a href="achievement.html">Hall of Fame</a>
 				<a href="feedback.html">Feedback</a>
 			</div>
 			<a href="https://www.instagram.com/actuallymamal" target="_blank"><img src="img/ig.png" title="Instagram" class="social"/></a>
@@ -145,12 +163,12 @@
 			<a href="https://www.facebook.com/khairul.akmal99" target="_blank"><img src="img/fb.jpg" title="Facebook" class="social"/></a>	
 			<a href="https://github.com/khairulakmal16" target="_blank"><img src="img/github.png" title="Github" class="social"/></a>	
 		</div>
-		<h2 style="font-size:45px; weight:bold;">Favourite Songs</h2>
-		<div class="gif">
-			<img src="gif/cat.gif" style="height:200px; width:200px;"/>
-		</div>
-		<div class="fieldset">
-			<table align="center" style="text-align:center; margin-top:8%;">
+		<div class="textbox">
+			<h2 style="font-size:45px; weight:bold;">Favourite Songs</h2>
+			<table align="center" class="table1">
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
 				<tr>
 					<td><h2>Maroon 5 : Memories</h2></td>
 				</tr>
@@ -175,6 +193,9 @@
 					preload="auto"
 					controls>
 					</audio></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
 				</tr>
 			</table>
 		</div>
