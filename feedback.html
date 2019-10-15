@@ -228,7 +228,7 @@
 			function validate(){
 				var email = document.feedback.Email.value;
 				if(email.includes('@')){
-					dialog("You will redirect to Formspree.io");
+					confirm("You will redirect to Formspree.io");
 					return true;
 				}
 				else {
