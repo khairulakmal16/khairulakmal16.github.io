@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Home</title>
+		<title>Gallery</title>
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
 		<style>
 			body {
@@ -10,23 +10,7 @@
 				background-image:url(img/floor-tile.png);
 				background-position:center-center;
 			}
-			.table{
-				margin-top:8%;
-				width:100%;
-				border-collapse:collapse;
-				border:0;
-				text-align:center;
-				background-color:#E97451;
-				color:white;
-			}
-			
-			.heading{
-				font-family: Verdana;
-				text-align:center;
-				font-size: 50px;
-				margin-top:3%;
-			}
-	
+		
 			.topnav {
 				background-color: #E97451;
 				overflow: hidden;
@@ -117,10 +101,45 @@
 			.dropdown:hover .dropdown-content {
 				display: block;
 			}	
+			
+			.image {
+				width:50%;
+				margin-top:-50%;
+			}
+			
+			.image2 {
+				width:20%;
+				padding:0;
+				margin-top:3%;
+				margin-left:2%;
+				
+			}
+			
+			.image2margin{
+				margin-top:-37%;
+				margin-right:2%;
+			}
+			
+			.fade {
+				-webkit-animation-name: fade;
+				-webkit-animation-duration: 1.5s;
+				animation-name: fade;
+				animation-duration: 1.5s;
+			}
+		
+			@-webkit-keyframes fade {
+				from {opacity: .4} 
+				to {opacity: 1}
+			}
+
+			@keyframes fade {
+				from {opacity: .4} 
+				to {opacity: 1}
+			}	
 		</style>
 	</head>
 	<body>
-		<div class="topnav">
+		<div class="topnav">  
 			<div class="page">
 				<a href="index.html">Home</a>
 			</div>
@@ -141,21 +160,44 @@
 			<a href="https://www.facebook.com/khairul.akmal99" target="_blank"><img src="img/fb.jpg" title="Facebook" class="social"/></a>	
 			<a href="https://github.com/khairulakmal16" target="_blank"><img src="img/github.png" title="Github" class="social"/></a>	
 		</div>
-		<div class="heading">
-				<h1>Hi, I'm <span style="background-color: #E97451">KHAIRUL AKMAL.</span></h1>
-				<h6><u>Welcome to My Website.</u></h6>
+		<h1 align="center" style="font-family:Verdana; font-size:40px;">Gallery</h1>
+		<div align="left">
+			<img class="image2" src="gallery/1.jpg"><br>
+			<img class="image2" src="gallery/2.jpg">
 		</div>
 		<div align="center">
-			<table class="table">
-				<tr>
-					<td style="width:350px; height:350px;"><img src="img/mal.jpg" style="width:360px; height:360px; margin:0;"/></td>
-					<td>
-						<span style="font-family: roboto; font-size:25px; font-style:italic;">
-							<p>I'm currently 20 years old and part 5 computer science student at UiTM Samarahan Campus 2.</p>
-							<p>This website was developed by me to convey my personal information such as working experiences, skills and etc.</p>
-						</span>
-					</td>
-				</tr>
-			</table>
+			<img class="image fade" src="gallery/01.jpg">
+			<img class="image fade" src="gallery/02.jpg">
+			<img class="image fade" src="gallery/03.jpg">
+			<img class="image fade" src="gallery/04.jpg">
+			<img class="image fade" src="gallery/05.jpg">
+			<img class="image fade" src="gallery/06.jpg">
+			<img class="image fade" src="gallery/07.jpg">
+			<img class="image fade" src="gallery/08.jpg">
+			<img class="image fade" src="gallery/09.jpg">
 		</div>
+		<div align="right" class="image2margin">
+			<img class="image2" src="gallery/3.jpg"><br>
+			<img class="image2" src="gallery/4.jpg">
+		</div>
+		<br>
+		<script>
+			var slideIndex = 0;
+			showSlides();
+
+			function showSlides() {
+			var i;
+			var slides = document.getElementsByClassName("image");
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";  
+			}
+			slideIndex++;
+			if(slideIndex > slides.length){
+				slideIndex=1;
+			}
+			slides[slideIndex-1].style.display = "block";  
+			setTimeout(showSlides, 2000);
+			}
+		</script>
+	</body>
 </html>
