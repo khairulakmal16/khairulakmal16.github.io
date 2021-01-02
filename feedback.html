@@ -3,6 +3,7 @@
 	<head>
 		<title>Feedback</title>
 	<link rel=" shortcut icon" type="image/x-icon" href="favicon.ico"/>
+	<link rel="stylesheet" type="text/css" href="style/navbar.css">
 		<style>
 			body {
 				margin: 0;
@@ -12,96 +13,6 @@
 				background-position:center-center;
 			}
 			
-			.topnav {
-				background-color: #E97451;
-				overflow: hidden;
-				width:100%;
-				top: 0;
-				font-family: Arial Black;
-			}
-				
-			.page a {
-				float: left;
-				color: white;
-				text-align: center;
-				padding: 14px 16px;
-				margin-right: 25px;
-				font-weight: bold;
-				font-size: 17px;
-				text-decoration:none;
-			}
-			
-			.page:hover{
-				background-color: white;
-				color: black;
-				text-decoration: underline;
-			}
-			
-			.dropdown {
-				float: left;
-				overflow: hidden;
-			}
-			
-			.social {
-				float: right;
-				padding: 8px;
-				font-size: 30px;
-				width: 30px;
-				text-align: center;
-				text-decoration: none;
-				margin-right: 5px;
-			}
-			
-			.social:hover {
-				opacity: 0.5;
-				color:white;
-			}
-			
-			.dropdown .dropbtn {
-				text-align: center;
-				padding: 14px 16px;
-				margin-right: 25px;
-				font-weight: bold;
-				font-size: 17px; 
-				border: none;
-				outline: none;
-				color: white;
-				background-color: inherit;
-				font-family: inherit;
-			}
-
-			.topnav a:hover, .dropdown:hover .dropbtn {
-				background-color: white;
-				color: black;
-				text-decoration: underline;
-			}
-
-			.dropdown-content {
-				display: none;
-				position: absolute;
-				background-color: #f9f9f9;
-				min-width: 160px;
-				box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-				z-index: 1;
-				font-size:13px;
-			}
-
-			.dropdown-content a {
-				float: none;
-				color: black;
-				padding: 12px 16px;
-				text-decoration: none;
-				display: block;
-				text-align: left;
-			}
-
-			.dropdown-content a:hover {
-				background-color: #ddd;
-			}
-
-			.dropdown:hover .dropdown-content {
-				display: block;
-			}
 			
 			.button{
 				background-color:white;
@@ -117,10 +28,24 @@
 			
 			}
 			
+			.button2{
+				background-color:white;
+				border-radius: 12px;
+				transition-duration: 0.4s;
+				cursor: pointer;
+				padding: 15px 30px;
+			}
+			
+			.button2:hover {
+				background-color: red;
+				color: white;
+			
+			}
+			
 			.box{
 				border-width:5px;  
 				border-style:outset;
-				background-color:#E97451;
+				background-color:52796f;
 				float:left;
 				width:35%;
 				height:65%;
@@ -139,7 +64,7 @@
 			.box2{
 				height:65%;
 				width:30%;
-				background-color:#E97451;
+				background-color:52796f;
 				border-width:5px;  
 				border-style:outset;
 				border-color:grey;
@@ -172,32 +97,38 @@
 				<a href="gallery.html">Gallery</a>
 				<a href="feedback.html">Feedback</a>
 			</div>
-			<a href="https://www.instagram.com/actuallymamal" target="_blank"><img src="img/ig.png" title="Instagram" class="social"/></a>
+			<a href="https://www.instagram.com/khairulakmalmhd/" target="_blank"><img src="img/ig.png" title="Instagram" class="social"/></a>
 			<a href="https://www.twitter.com/actuallymamal" target="_blank"><img src="img/twitter.png" title="Twitter" class="social"/></a>
 			<a href="https://www.facebook.com/khairul.akmal99" target="_blank"><img src="img/fb.jpg" title="Facebook" class="social"/></a>	
 			<a href="https://github.com/khairulakmal16" target="_blank"><img src="img/github.png" title="Github" class="social"/></a>	
 		</div>	
 		<div class="box">
-			<form name="feedback" method="POST" action="https://formspree.io/khairulakmal0@gmail.com" onsubmit="return validate()">
+			<form name="feedback" method="POST" action="https://formspree.io/f/khairulakmal0@gmail.com" onsubmit="return validate()">
 				<table>
 					<p style="font-size:35px;"><b>Feedback Form</b></p>
 					<tr>
 						<td><b>Name</b></td>
 						<td><b>:</b></td>
-						<td><input placeholder="Your Full Name" type="text" name="Full Name" size="44" required></td>
+						<td><input placeholder="Your Full Name" type="text" name="FullName" size="44"></td>
 					</tr>
 					<tr>
 						<td><b>Email Address</b></td>
 						<td><b>:</b></td>
-						<td><input placeholder="Your Email" type="text" name="Email" required></td>
+						<td><input placeholder="Your Email" type="text" name="Email"></td>
 					</tr>
 					<tr>
 						<td><b>Feedback</b></td>
 						<td><b>:</b></td>
-						<td><textarea placeholder="Type Your Feedback Here..." name="Feedback" rows="10" cols="44" required></textarea></td>
+						<td><textarea placeholder="Type Your Feedback Here..." name="Feedback" rows="10" cols="44"></textarea></td>
 					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td>
+							<input type="submit" value="Submit" class="button">
+							<input type="reset" value="Clear All" class="button2">
+						</td>
 				</table>				
-				<input type="submit" value="Submit" class="button">
 			</form>
 		</div>
 		
@@ -220,21 +151,36 @@
 				<tr>
 					<td>Address</td>
 					<td>:</td>
-					<td>No 48 Jalan W/M 3/8 Bandar Behrang 2020, 35900 Tanjung Malim, Perak</td>
+					<td>No. 48 Jalan WM 3/8 Tanjung Malim Perak</td>
 				</tr>
 			</table>
 		</div>
 		<script>
 			function validate(){
 				var email = document.feedback.Email.value;
-				if(email.includes('@')){
-					confirm("You will redirect to Formspree.io");
-					return true;
-				}
-				else {
-					alert("Please Enter The Correct Email");
+				var name = document.feedback.FullName.value;
+				var error = 0;
+				
+				if(name === null || name == ""){
+					alert("Please Enter Your Name");
+					error++;
 					return false;
 				}
+				if(email === null || email == ""){
+					alert("Please Enter Your Name");
+					error++;
+					return false;
+				}
+				if(email.includes('@') == false){
+					alert("Please Enter The Correct Email");
+					error++;
+					return false;
+				}
+				if(error == 0) {
+					alert("You will redirect to Formspree.io");
+					return true;
+				}
+				
 			}
 		</script>
 	</body>
