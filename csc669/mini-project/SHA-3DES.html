@@ -1,0 +1,140 @@
+<html>
+  <head>
+    <title>Message Authentication Game</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-1.10.1.min.js"></script>
+    <script src="https://cdn.rawgit.com/CryptoStore/crypto-js/3.1.2/build/rollups/tripledes.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      function encryptDesCbcPkcs7Padding(message, key) {
+    		var keyWords = CryptoJS.enc.Utf8.parse(key);
+    		var ivWords = CryptoJS.lib.WordArray.create([0, 0]);
+    		var encrypted = CryptoJS.DES.encrypt(message, keyWords, { iv: ivWords});
+
+    		return encrypted;//.toString(CryptoJS.enc.Utf8);
+    	}
+
+    	function doEncrypt(){
+    		var plainText = document.getElementById("plaintext").value;
+
+    		var base64Coded = window.btoa(plainText);
+
+
+    		var key= document.getElementById("inputKey").value;
+    		var encrypted = encryptDesCbcPkcs7Padding(base64Coded, key);
+
+    		var finalEncrypted = CryptoJS.enc.Base64.stringify(encrypted.ciphertext);
+
+    		document.getElementById("encText").value= finalEncrypted;
+        document.getElementById("encText2").value= finalEncrypted;
+    	}
+
+    	function decryptDesCbcPkcs7Padding(message, key) {
+    		var keyWords = CryptoJS.enc.Utf8.parse(key);
+    		var ivWords = CryptoJS.lib.WordArray.create([0, 0]);
+
+    		var decrypted = CryptoJS.DES.decrypt({ciphertext: message}, keyWords, { iv: ivWords });
+
+    		return decrypted.toString(CryptoJS.enc.Utf8);
+    	}
+
+    	function doDecrypt(){
+    		var base64Decoded = CryptoJS.enc.Base64.parse(document.getElementById("encText2").value);
+
+        var encKey = document.getElementById("inputKey").value;
+    		var key= document.getElementById("inputKey2").value;
+        if(encKey != key){
+          alert("Different Key");
+        }
+
+    		var decrypted = decryptDesCbcPkcs7Padding(base64Decoded, key);
+
+    		var finalDecrypted = CryptoJS.enc.Base64.parse(decrypted.toString(CryptoJS.enc.Utf8)).toString(CryptoJS.enc.Utf8);
+
+    		document.getElementById("decText").value= finalDecrypted;
+    	}
+
+    	function validate(){
+        var hm= document.getElementById("outputSHA").value;
+    		var decryptedText= document.getElementById("decText").value;
+
+    		if (hm==decryptedText)
+    			document.getElementById("check").innerHTML= "Correct";
+    		else
+    			document.getElementById("check").innerHTML= "Incorrect";
+    	}
+
+    </script>
+  </head>
+  <body>
+    <div id="header">
+      <h1>Message Authentication Game</h1>
+    </div>
+    <div id="body">
+      <div id="main">
+        <h2>Generate Hash Code</h2>
+        <h3>Enter Plaintext [M]</h3>
+        <div class="inputSHA">
+          <textarea id="inputSHA" placeholder="M"></textarea>
+          <div class="option-block" hidden>
+          </div>
+        </div>
+        <div class="submit">
+          <input class="btn btn-default" id="executeSHA" type="button" value="Generate Hash Code">
+          <label>
+            <input id="auto-update" type="checkbox" value="1" checked="checked">Auto Update
+          </label>
+        </div>
+        <h3>Hash Code [H(M)]</h3>
+        <div class="outputSHA">
+          <textarea id="outputSHA" placeholder="H(M)" disabled></textarea>
+        </div>
+        <br><br>
+        <h2>Encryption using DES</h2>
+        <h3>Plaintext (Hash Code)</h3>
+        <div class="plaintext">
+          <textarea id="plaintext" placeholder="H(M)" disabled></textarea>
+        </div>
+        <h3>Enter Key:</h3>
+          <div class="inputKey">
+                <textarea id="inputKey" placeholder="Key"></textarea>
+          </div>
+          <div class="submit">
+            <input class="btn btn-default" type="button" value="Encrypt" onclick="doEncrypt()">
+          </div>
+          <h3>Encrypted Text</h3>
+          <div class="encText">
+            <textarea id="encText" placeholder="Encrypted Text" disabled></textarea>
+          </div>
+          <br><br>
+          <h2>Decryption using DES</h2>
+          <h3>Encrypted Text</h3>
+          <div class="encText2">
+            <textarea id="encText2" placeholder="Encrypted Text" disabled></textarea>
+          </div>
+          <h3>Enter Key</h3>
+            <div class="inputKey2">
+                  <textarea id="inputKey2" placeholder="Key"></textarea>
+            </div>
+            <div class="submit">
+              <input class="btn btn-default" type="button" value="Decrypt" onclick="doDecrypt()">
+            </div>
+            <h3>Decrypted Text</h3>
+            <div class="decText">
+              <textarea id="decText" placeholder="Decrypted Text" disabled></textarea>
+            </div>
+            <div class="submit">
+              <input class="btn btn-default" type="button" value="Compare H(M) with Decrypted" onclick="validate()">
+            </div>
+            <h3>Checking Original Message</h3>
+            <div>
+              <textarea id="check" disabled></textarea>
+            </div>
+      </div>
+
+    </div>
+    <script src="js/sha3.min.js"></script>
+    <script>method = sha3_512;</script>
+
+  </body>
+</html>
