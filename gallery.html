@@ -12,49 +12,49 @@
 				background-image:url(img/floor-tile.png);
 				background-position:center-center;
 			}
-			
+
 			.image {
 				width:50%;
 				margin-top:-50%;
 			}
-			
+
 			.image2 {
 				width:20%;
 				padding:0;
 				margin-top:3%;
 				margin-left:2%;
-				
+
 			}
-			
+
 			.image2right{
 				margin-top:-37.5%;
 				margin-right:2%;
 			}
-			
+
 			.fade {
 				-webkit-animation-name: fade;
 				-webkit-animation-duration: 1.5s;
 				animation-name: fade;
 				animation-duration: 1.5s;
 			}
-		
+
 			@-webkit-keyframes fade {
-				from {opacity: .4} 
+				from {opacity: .4}
 				to {opacity: 1}
 			}
 
 			@keyframes fade {
-				from {opacity: .4} 
+				from {opacity: .4}
 				to {opacity: 1}
-			}	
+			}
 		</style>
 	</head>
 	<body>
-		<div class="topnav">  
+		<div class="topnav">
 			<div class="page">
 				<a href="index.html">Home</a>
 			</div>
-				
+
 			<div class="dropdown">
 				<button class="dropbtn">About Me</button>
 				<div class="dropdown-content">
@@ -68,8 +68,8 @@
 			</div>
 			<a href="https://www.instagram.com/aiman.pa/" target="_blank"><img src="img/ig.png" title="Instagram" class="social"/></a>
 			<a href="https://www.twitter.com/actuallymamal" target="_blank"><img src="img/twitter.png" title="Twitter" class="social"/></a>
-			<a href="https://www.facebook.com/ManParangGaming/" target="_blank"><img src="img/fb.jpg" title="Facebook" class="social"/></a>	
-			<a href="https://github.com/khairulakmal16" target="_blank"><img src="img/github.png" title="Github" class="social"/></a>	
+			<a href="https://www.facebook.com/ManParangGaming/" target="_blank"><img src="img/fb.jpg" title="Facebook" class="social"/></a>
+			<a href="https://github.com/khairulakmal16" target="_blank"><img src="img/github.png" title="Github" class="social"/></a>
 		</div>
 		<h1 align="center" style="font-family:Verdana; font-size:40px;">Gallery</h1>
 		<div align="left">
@@ -77,11 +77,11 @@
 			<img class="image2" src="gallery/2.jpg">
 		</div>
 		<div align="center">
-			<img class="image fade" src="gallery/01.png">
+			<img class="image fade" src="gallery/01.jpg">
 			<img class="image fade" src="gallery/02.jpg">
 			<img class="image fade" src="gallery/03.jpg">
-			<img class="image fade" src="gallery/04.jpg">
-			<img class="image fade" src="gallery/05.jpg">
+			<img class="image fade" src="gallery/06.jpg">
+			<img class="image fade" src="gallery/07.jpg">
 		</div>
 		<div align="right" class="image2right">
 			<img class="image2" src="gallery/3.jpg"><br>
@@ -96,13 +96,13 @@
 			var i;
 			var slides = document.getElementsByClassName("image");
 			for (i = 0; i < slides.length; i++) {
-				slides[i].style.display = "none";  
+				slides[i].style.display = "none";
 			}
 			slideIndex++;
 			if(slideIndex > slides.length){
 				slideIndex=1;
 			}
-			slides[slideIndex-1].style.display = "block";  
+			slides[slideIndex-1].style.display = "block";
 			setTimeout(showSlides, 2000);
 			}
 		</script>
