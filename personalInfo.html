@@ -1,12 +1,11 @@
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Personal Info</title>
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
 		<link rel="stylesheet" type="text/css" href="style/navbar.css">
-	</head>
 		<style>
 			body {
-				margin-top: 5%;
 				font-family:Roboto;
 				text-align:center;
 				background-image:url(img/floor-tile.png);
@@ -71,8 +70,20 @@
 				text-align:left;
 			}
 		</style>
+		<script>
+			function calculateAge() {
+			var dob = new Date("08/16/1999");
+			var today = new Date();
+			var age = today.getFullYear() - dob.getFullYear();
+			var m = today.getMonth() - dob.getMonth();
+			if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+				age--;
+			}
+			document.getElementById("age").innerHTML = age;
+      	}
+		</script>
 	</head>
-		<body>
+		<body onload="calculateAge()">
 			<div class="topnav">
 				<div class="page">
 					<a href="index.html">Home</a>
@@ -117,12 +128,7 @@
 				<tr>
 					<td>Age</td>
 					<td>:</td>
-					<td>23</td>
-				</tr>
-				<tr>
-					<td>Date of Birth</td>
-					<td>:</td>
-					<td>16 August 1999</td>
+					<td><span id="age"></span></td>
 				</tr>
 					<td>Location</td>
 					<td>:</td>
