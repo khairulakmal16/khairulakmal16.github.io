@@ -4,6 +4,8 @@
 		<title>Home</title>
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
 		<link rel="stylesheet" type="text/css" href="style/navbar.css">
+		<!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<style>
 			body {
 				margin: 0;
@@ -31,32 +33,40 @@
 		</style>
 		<script>
 			function calculateAge() {
-			var dob = new Date("08/16/1999");
-			var today = new Date();
-			var age = today.getFullYear() - dob.getFullYear();
-			var m = today.getMonth() - dob.getMonth();
-			if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
-				age--;
+				var dob = new Date("08/16/1999");
+				var today = new Date();
+				var age = today.getFullYear() - dob.getFullYear();
+				var m = today.getMonth() - dob.getMonth();
+				if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+					age--;
+				}
+				document.getElementById("age").innerHTML = age + " years old";
+      		}
+
+			/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+			function myFunction() {
+				var x = document.getElementById("myTopnav");
+				if (x.className === "topnav") {
+					x.className += " responsive";
+				} else {
+					x.className = "topnav";
+				}
 			}
-			document.getElementById("age").innerHTML = age + " years old";
-      	}
 		</script>
 	</head>
 	<body onload="calculateAge()">
-		<div class="topnav">
+		<div class="topnav" id="myTopnav">
 			<div class="page">
 				<a href="index.html">Home</a>
-			</div>
-
-			<div class="dropdown">
-				<button class="dropbtn">About Me</button>
-				<div class="dropdown-content">
-					<a href="personalInfo.html">About Me</a>
+				<div class="dropdown">
+					<button class="dropbtn">About Me</button>
+					<div class="dropdown-content">
+						<a href="personalInfo.html">About Me</a>
+					</div>
 				</div>
-			</div>
-			<div class="page">
 				<a href="gallery.html">Gallery</a>
 				<a href="feedback.html">Feedback</a>
+				<a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
 			</div>
 			<a href="https://www.instagram.com/khairulxakmal/" target="_blank"><img src="img/ig.png" title="Instagram" class="social"/></a>
 			<a href="https://www.twitter.com/actuallymamal" target="_blank"><img src="img/twitter.png" title="Twitter" class="social"/></a>
